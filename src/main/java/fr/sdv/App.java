@@ -1,5 +1,6 @@
 package fr.sdv;
 
+import fr.sdv.entities.Article;
 import fr.sdv.entities.Fournisseur;
 import fr.sdv.entities.Livre;
 
@@ -15,28 +16,33 @@ public class App {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("biblio");
         EntityManager em = emf.createEntityManager();
 
-        Livre unLivre = em.find(Livre.class, 2);
+        //Livre unLivre = em.find(Livre.class, 2);
 
-        System.out.println(unLivre);
+        //System.out.println(unLivre);
+
+        Fournisseur fournisseur = em.find(Fournisseur.class, 3);
+        System.out.println(fournisseur.getArticle());
+
+        Article article = em.find(Article.class, 3);
+        System.out.println(article);
 
         //Livre lAModifier = em.find(Livre.class, 5);
         //Livre lASupprimer = em.find(Livre.class, 2);
 
         em.getTransaction().begin();
-
         //lAModifier.setTitre("Du plaisir dans la cuisine");
         //em.remove(lASupprimer);
 
         em.getTransaction().commit();
 
-        String query = "SELECT b FROM Livre b WHERE b.auteur = :auteur";
+        /*String query = "SELECT b FROM Livre b WHERE b.auteur = :auteur";
         List<Livre> livres = em.createQuery(query, Livre.class)
                 .setParameter("auteur", "Jules Verne")
                 .getResultList();
 
         for (Livre livre : livres) {
             System.out.println(livre.getTitre() + ", " + livre.getAuteur());
-        }
+        }*/
 
         /*String query = "SELECT b FROM Livre b";
         List<Livre> livres = em.createQuery(query, Livre.class).getResultList();

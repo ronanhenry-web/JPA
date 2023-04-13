@@ -1,6 +1,7 @@
 package fr.sdv.entities;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table (name = "fournisseur")
@@ -8,6 +9,8 @@ public class Fournisseur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @OneToMany(mappedBy = "fournisseur", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Article> article;
     private String nom;
 
     public Fournisseur() {}
@@ -31,6 +34,18 @@ public class Fournisseur {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public Set<Article> getArticle() {
+        return article;
+    }
+
+    public void setArticle(Set<Article> article) {
+        this.article = article;
+    }
+
+    public void addArticle(Article article) {
+        article.setFournisseur(this);
     }
 
     @Override
