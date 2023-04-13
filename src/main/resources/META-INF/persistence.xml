@@ -14,4 +14,23 @@
             <property name="hibernate.format_sql" value="true" />
         </properties>
     </persistence-unit>
+    <persistence-unit name="banque">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>fr.sdv.entities.Banque</class>
+        <class>fr.sdv.entities.ClientB</class>
+        <class>fr.sdv.entities.Compte</class>
+        <class>fr.sdv.entities.Operation</class>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/banque" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="" />
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+
+            <property name="hibernate.archive.autodetection" value="" />
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+        </properties>
+    </persistence-unit>
 </persistence>

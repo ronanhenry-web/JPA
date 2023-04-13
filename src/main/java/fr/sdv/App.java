@@ -11,15 +11,15 @@ import java.util.List;
 // then press Enter. You can now see whitespace characters in your code.
 public class App {
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("biblio");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("banque");
         EntityManager em = emf.createEntityManager();
 
         //TP 3
-        Client client = em.find(Client.class, 1);
+        /*Client client = em.find(Client.class, 1);
         System.out.println(client.getEmprunts());
 
         Emprunt emprunt = em.find(Emprunt.class, 1);
-        System.out.println(emprunt.getLivres());
+        System.out.println(emprunt.getLivres());*/
 
         //TP Test
         //Fournisseur fournisseur = em.find(Fournisseur.class, 3);
