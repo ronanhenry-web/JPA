@@ -1,8 +1,6 @@
 package fr.sdv;
 
-import fr.sdv.entities.Article;
-import fr.sdv.entities.Fournisseur;
-import fr.sdv.entities.Livre;
+import fr.sdv.entities.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -16,15 +14,24 @@ public class App {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("biblio");
         EntityManager em = emf.createEntityManager();
 
+        //TP 3
+        Client client = em.find(Client.class, 1);
+        System.out.println(client.getEmprunts());
+
+        Emprunt emprunt = em.find(Emprunt.class, 1);
+        System.out.println(emprunt.getLivres());
+
+        //TP Test
+        //Fournisseur fournisseur = em.find(Fournisseur.class, 3);
+        //System.out.println(fournisseur.getArticle());
+
+        //Article article = em.find(Article.class, 3);
+        //System.out.println(article);
+
+        // TP2
         //Livre unLivre = em.find(Livre.class, 2);
 
         //System.out.println(unLivre);
-
-        Fournisseur fournisseur = em.find(Fournisseur.class, 3);
-        System.out.println(fournisseur.getArticle());
-
-        Article article = em.find(Article.class, 3);
-        System.out.println(article);
 
         //Livre lAModifier = em.find(Livre.class, 5);
         //Livre lASupprimer = em.find(Livre.class, 2);
