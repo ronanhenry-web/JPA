@@ -20,6 +20,9 @@
         <class>fr.sdv.entities.ClientB</class>
         <class>fr.sdv.entities.Compte</class>
         <class>fr.sdv.entities.Operation</class>
+        <class>fr.sdv.entities.LivretA</class>
+        <class>fr.sdv.entities.AssuranceVie</class>
+        <class>fr.sdv.entities.Virement</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/banque" />
             <property name="javax.persistence.jdbc.user" value="root" />

@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "operation")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "type")
 public class Operation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
