@@ -1,4 +1,4 @@
-# Projet Java
+# Projet JPA
 
 Objectif découvrir les entityManager (CRUD), JPQL avec Query, les transactions des requêtes, l'héritage et la modélisation objet
 - De plus, j'ai plusieurs branches qui représentent un TP
